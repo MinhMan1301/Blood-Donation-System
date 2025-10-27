@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCMIU Blood Donation - Why Donate Blood</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.3);
+        }
+
+        .list-item {
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .image-hover {
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .image-hover img {
+            transition: all 0.5s ease;
+        }
+
+        .image-hover:hover img {
+            transform: scale(1.1) rotate(2deg);
+        }
+    </style>
+</head>
+
+<body id="top" class="bg-gradient-to-br from-red-50 via-white to-red-50">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50">
+    <!-- Header Top -->
+    <div class="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white py-3 text-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <ul class="flex gap-6">
+                <li>
+                    <a href="mailto:blooddonation@hcmiu.edu.vn" class="hover:text-red-200 transition-all duration-300 flex items-center gap-2 hover:scale-105">
+                        <span class="text-lg">📧</span>
+                        <span class="font-medium">blooddonation@hcmiu.edu.vn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+842838647256" class="hover:text-red-200 transition-all duration-300 flex items-center gap-2 hover:scale-105">
+                        <span class="text-lg">📞</span>
+                        <span class="font-medium">+84-28-3864-7256</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex gap-4">
+                <li><a href="#" class="hover:text-red-200 transition-all duration-300 hover:scale-125">FB</a></li>
+                <li><a href="#" class="hover:text-red-200 transition-all duration-300 hover:scale-125">IG</a></li>
+                <li><a href="#" class="hover:text-red-200 transition-all duration-300 hover:scale-125">TW</a></li>
+                <li><a href="#" class="hover:text-red-200 transition-all duration-300 hover:scale-125">YT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header Bottom -->
+    <div class="bg-glass shadow-xl border-b border-red-100">
+        <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold gradient-text hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <span class="text-4xl">❤️</span>
+                HCMIU Blood Donation
+            </a>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.php" class="text-gray-700 hover:text-red-600 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:scale-110">Home</a>
+                <a href="#service" class="text-gray-700 hover:text-red-600 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:scale-110">Find donor</a>
+                <a href="#about" class="text-gray-700 hover:text-red-600 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:scale-110">About Us</a>
+                <a href="#blog" class="text-gray-700 hover:text-red-600 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:scale-110">Blog</a>
+                <a href="contact.php" class="text-gray-700 hover:text-red-600 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:scale-110">Contact</a>
+            </nav>
+            <a href="register.php" class="hidden md:block bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-3 rounded-full hover:shadow-2xl hover:scale-110 transition-all duration-300 font-semibold">Login / Register</a>
+        </div>
+    </div>
+</header>
+
+<main class="mt-32">
+    <!-- HERO SECTION -->
+    <section class="relative py-20 overflow-hidden" id="home">
+        <!-- Background with gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-red-100 via-white to-red-50"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Hero Content -->
+                <div class="space-y-8">
+                    <div class="fade-in-left">
+                        <img src="images/images/about2.png" alt="ICON" width="80" height="80" class="float-animation pulse-glow rounded-full">
+                    </div>
+
+                    <div class="fade-in-left delay-100">
+                        <p class="text-red-600 font-bold text-lg tracking-wide">HCMIU Blood Donation</p>
+                    </div>
+
+                    <div class="fade-in-left delay-200">
+                        <h1 class="text-6xl font-extrabold gradient-text leading-tight">Why Donate Blood?</h1>
+                    </div>
+
+                    <div class="fade-in-left delay-300 space-y-6">
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            We need new blood donors from all backgrounds to ensure there is the right blood available for patients who need it.
+                        </p>
+
+                        <!-- Needs Box -->
+                        <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-red-600 card-hover">
+                            <h3 class="text-2xl font-bold text-red-700 mb-6">We need:</h3>
+                            <ul class="space-y-4 text-lg text-gray-700">
+                                <li class="list-item delay-100 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                    <span class="text-red-600 font-bold text-xl">•</span>
+                                    <span>At least 400 donors to meet the present demand</span>
+                                </li>
+                                <li class="list-item delay-200 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                    <span class="text-red-600 font-bold text-xl">•</span>
+                                    <span>Around 1,350 donors a year to replace those who can no longer donate</span>
+                                </li>
+                                <li class="list-item delay-300 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                    <span class="text-red-600 font-bold text-xl">•</span>
+                                    <span>3,000 new donors with priority blood types such as O negative every year</span>
+                                </li>
+                                <li class="list-item delay-400 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                    <span class="text-red-600 font-bold text-xl">•</span>
+                                    <span>More young people to start giving blood so we can make sure we have enough blood in the future</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Section -->
+                    <div class="fade-in-left delay-400 bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl shadow-xl card-hover space-y-5">
+                        <h3 class="text-2xl font-bold text-red-700 mb-6">💝 Benefits of Donating Blood:</h3>
+
+                        <div class="space-y-4 text-gray-700">
+                            <p class="list-item delay-100 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>The Gift of Life:</strong> The most precious gift that one can give to another person is the gift of life i.e. blood. It is the essence of life.</span>
+                            </p>
+
+                            <p class="list-item delay-200 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Multiple Lives Saved:</strong> Your blood saves more than one life when it is separated into its components (red blood cells, plasma etc.).</span>
+                            </p>
+
+                            <p class="list-item delay-300 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Essential Medical Need:</strong> Blood is needed regularly for patients with diseases such as thalassemia and hemophilia, and also for the treatment of injuries after an accident, major surgeries, anemia, etc.</span>
+                            </p>
+
+                            <p class="list-item delay-400 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Health Benefits:</strong> It improves your overall health and wellbeing.</span>
+                            </p>
+
+                            <p class="list-item delay-500 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Heart Health:</strong> People who donate blood are 88% less likely to suffer a heart attack and 33% less likely to acquire any type of cardiovascular disease.</span>
+                            </p>
+
+                            <p class="list-item delay-600 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Reduces Iron Levels:</strong> When you donate blood, it removes 225 to 250 milligrams of iron from your body, hence reducing the risk of heart disease.</span>
+                            </p>
+
+                            <p class="list-item delay-100 flex items-start gap-3 hover:translate-x-2 transition-all duration-300">
+                                <span class="text-red-600 font-bold text-xl">#</span>
+                                <span><strong>Free Health Screening:</strong> Blood Center performs numerous tests on the donated blood. Therefore regular blood donation helps in shielding you from serious diseases.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Images -->
+                <div class="fade-in-right space-y-6">
+                    <div class="image-hover rounded-3xl overflow-hidden shadow-2xl card-hover">
+                        <img src="./images/images/whydonate.png" alt="Why Donate" class="w-full h-auto">
+                    </div>
+
+                    <div class="image-hover rounded-3xl overflow-hidden shadow-2xl card-hover">
+                        <img src="./images/images/donate-copy.png" alt="Donate" class="w-full h-auto">
+                    </div>
+
+                    <div class="image-hover rounded-3xl overflow-hidden shadow-2xl card-hover">
+                        <img src="./images/images/whyydonate.png" alt="Blood Donation" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 relative overflow-hidden mt-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-red-900/10 to-transparent"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid md:grid-cols-4 gap-12">
+            <!-- Brand -->
+            <div class="space-y-4">
+                <a href="#" class="text-3xl font-bold text-red-500 hover:text-red-400 transition-all duration-300 hover:scale-105 inline-block">HCMIU Blood Donation</a>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    We are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry.
+                    We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
+                </p>
+                <div class="bg-gradient-to-r from-red-700 to-red-600 p-5 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">⏰</span>
+                        <div>
+                            <div class="font-bold text-lg">24 X 7</div>
+                            <div class="text-red-200 text-sm">365 Days</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Links -->
+            <div>
+                <h3 class="font-bold mb-6 text-xl text-red-400">Other Links</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Home</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Find donor</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> About us</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Blog</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Contact</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Login / Register</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="font-bold mb-6 text-xl text-red-400">Our Services</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Blood Donation Drives</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Donor Registration</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Health Screening</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Emergency Blood Request</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Volunteer Programs</a></li>
+                    <li><a href="#" class="hover:text-red-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300"><span>+</span> Education & Awareness</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-bold mb-6 text-xl text-red-400">Contact Us</h3>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3 hover:text-red-400 transition-all duration-300">
+                        <span class="text-lg">📍</span>
+                        <a href="https://goo.gl/maps/BYA5MxQUg5B8ZFLcA" class="hover:translate-x-2 inline-block transition-all duration-300">
+                            HCMIU Campus, District 7,<br>
+                            Ho Chi Minh City, Vietnam
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lg">📞</span>
+                        <a href="tel:+842838647256" class="hover:text-red-400 hover:translate-x-2 inline-block transition-all duration-300">+84-28-3864-7256</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lg">📧</span>
+                        <a href="mailto:blooddonation@hcmiu.edu.vn" class="hover:text-red-400 hover:translate-x-2 inline-block transition-all duration-300">blooddonation@hcmiu.edu.vn</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-400 text-sm">&copy; 2024 All Rights Reserved by HCMIU Blood Donation</p>
+            <ul class="flex gap-6">
+                <li><a href="#" class="hover:text-red-400 hover:scale-125 transition-all duration-300">FB</a></li>
+                <li><a href="#" class="hover:text-red-400 hover:scale-125 transition-all duration-300">IG</a></li>
+                <li><a href="#" class="hover:text-red-400 hover:scale-125 transition-all duration-300">TW</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#top" class="fixed bottom-8 right-8 bg-gradient-to-r from-red-600 to-red-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:shadow-red-500/50 hover:scale-125 transition-all duration-300 text-xl font-bold z-50 pulse-glow">↑</a>
+
+</body>
+</html>
