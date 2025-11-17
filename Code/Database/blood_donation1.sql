@@ -1,15 +1,6 @@
 CREATE DATABASE IF NOT EXISTS blood_donation;
 USE blood_donation;
-SELECT * FROM Doctor;
-SELECT * FROM Patients;
-SELECT * FROM Donors;
-SELECT * FROM Blood_Inventory;
-SELECT * FROM BLOOD_BANK;
-SELECT * FROM Donation_Event;
-SELECT * FROM Donors_DonationEvent;
-SELECT * FROM Doctor_BloodBank;
-SELECT * FROM Request;
-SELECT * FROM ACCOUNTT;
+
 -- Doctors
 CREATE TABLE IF NOT EXISTS Doctor (
     doctor_id          VARCHAR(20) PRIMARY KEY,
@@ -69,13 +60,13 @@ CREATE TABLE IF NOT EXISTS ACCOUNTT(
 -- request table
 CREATE TABLE IF NOT EXISTS Request (
     request_id 	 VARCHAR(20) 											PRIMARY KEY,
-    bank_id 	 INT 													NOT NULL,
+    bank_id 	 VARCHAR(20) 											NOT NULL,
     blood_type   ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-') NOT NULL,
     quantity 	 INT 													CHECK (quantity > 0),
     status 		 ENUM('Pending', 'Approved', 'Fulfilled', 'Rejected')   DEFAULT 'Pending',
     date_request DATE 													NOT NULL,
     date_response DATETIME 												NULL,
-    fulfilled_inventory_id INT 											NULL,
+    fulfilled_inventory_id VARCHAR(20) 									NULL,
     patient_id VARCHAR(20),
     doctor_id VARCHAR(20),
     donors_id VARCHAR(20),
@@ -93,8 +84,7 @@ CREATE TABLE IF NOT EXISTS BLOOD_BANK (
 	contact_email 	VARCHAR(100), 
 	volume 			DECIMAL(10,2) DEFAULT 0,
 	assigned_doctor VARCHAR(20),
-    request_id 		VARCHAR(20),
-    FOREIGN KEY (request_id) REFERENCES Request (request_id)
+    request_id 		VARCHAR(20)
 );
 
 -- BLOOD INVENTORY
@@ -136,5 +126,12 @@ CREATE TABLE IF NOT EXISTS Doctor_BloodBank (
     bank_id         VARCHAR(20) NOT NULL,
     PRIMARY KEY (doctor_id, bank_id),
     FOREIGN KEY (doctor_id) REFERENCES Doctor(doctor_id) ON DELETE CASCADE,
-    FOREIGN KEY (bank_id) REFERENCES Blood_Bank(bank_id) ON DELETE CASCADE
+    FOREIGN KEY (bank_id) REFERENCES BLOOD_BANK(bank_id) ON DELETE CASCADE
 );
+
+-- Add foreign key constraints that were removed due to circular dependencies
+ALTER TABLE Request ADD CONSTRAINT fk_request_bank_id 
+    FOREIGN KEY (bank_id) REFERENCES BLOOD_BANK(bank_id);
+
+ALTER TABLE Request ADD CONSTRAINT fk_request_fulfilled_inventory_id 
+    FOREIGN KEY (fulfilled_inventory_id) REFERENCES Blood_Inventory(unit_id);

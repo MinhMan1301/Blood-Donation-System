@@ -28,7 +28,7 @@ public class DonorController {
         // PUT /api/donors/{id}
         return donorService.findById(id).map(donor -> {
             // Logic cập nhật chi tiết...
-            donorDetails.setDonors_id(id); // Đảm bảo ID không thay đổi
+            donorDetails.setDonorsId(id); // Đảm bảo ID không thay đổi
             return donorService.save(donorDetails);
         }).orElseThrow(() -> new RuntimeException("Donor not found: " + id));
     }

@@ -28,7 +28,7 @@ public class PatientController {
         // PUT /api/patients/{id}
         return patientService.findById(id).map(patient -> {
             // Logic cập nhật chi tiết...
-            patientDetails.setPatient_id(id); // Đảm bảo ID không thay đổi
+            patientDetails.setPatientId(id); // Đảm bảo ID không thay đổi
             return patientService.save(patientDetails);
         }).orElseThrow(() -> new RuntimeException("Patient not found: " + id));
     }

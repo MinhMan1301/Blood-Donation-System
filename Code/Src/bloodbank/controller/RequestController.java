@@ -34,7 +34,7 @@ public class RequestController {
         // PUT /api/requests/{id}
         return requestService.findById(id).map(request -> {
             // Logic cập nhật chi tiết...
-            requestDetails.setRequest_id(id); // Đảm bảo ID không thay đổi
+            requestDetails.setRequestId(id); // Đảm bảo ID không thay đổi
             return requestService.save(requestDetails);
         }).orElseThrow(() -> new RuntimeException("Request not found: " + id));
     }

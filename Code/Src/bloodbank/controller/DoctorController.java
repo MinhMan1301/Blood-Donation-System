@@ -28,7 +28,7 @@ public class DoctorController {
         // PUT /api/doctors/{id}
         return doctorService.findById(id).map(doctor -> {
             // Logic cập nhật chi tiết...
-            doctorDetails.setDoctor_id(id); // Đảm bảo ID không thay đổi
+            doctorDetails.setDoctorId(id); // Đảm bảo ID không thay đổi
             return doctorService.save(doctorDetails);
         }).orElseThrow(() -> new RuntimeException("Doctor not found: " + id));
     }
