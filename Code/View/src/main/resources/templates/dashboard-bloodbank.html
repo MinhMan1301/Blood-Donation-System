@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Dashboard - Blood Donation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-indigo-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">🏥 Blood Bank Dashboard</h1>
+            <div class="flex gap-4">
+                <a href="/inventory" class="hover:underline">Inventory</a>
+                <a href="/requests" class="hover:underline">Requests</a>
+                <a href="/events" class="hover:underline">Events</a>
+                <a href="/logout" class="bg-indigo-800 px-4 py-2 rounded hover:bg-indigo-900">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Blood Bank Management 🏥</h2>
+            <p class="text-gray-600">Manage your blood inventory, requests, and donation events</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Total Blood Units -->
+            <div class="bg-gradient-to-br from-red-500 to-red-600 text-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-red-100 text-sm">Blood Units</p>
+                        <p class="text-3xl font-bold" th:text="${totalBloodUnits}">0</p>
+                    </div>
+                    <div class="text-5xl opacity-50">💉</div>
+                </div>
+            </div>
+
+            <!-- Total Requests -->
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-orange-100 text-sm">Requests</p>
+                        <p class="text-3xl font-bold" th:text="${totalRequests}">0</p>
+                    </div>
+                    <div class="text-5xl opacity-50">📋</div>
+                </div>
+            </div>
+
+            <!-- Total Donors -->
+            <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-green-100 text-sm">Donors</p>
+                        <p class="text-3xl font-bold" th:text="${totalDonors}">0</p>
+                    </div>
+                    <div class="text-5xl opacity-50">👥</div>
+                </div>
+            </div>
+
+            <!-- Total Events -->
+            <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-100 text-sm">Events</p>
+                        <p class="text-3xl font-bold" th:text="${totalEvents}">0</p>
+                    </div>
+                    <div class="text-5xl opacity-50">📅</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Requests -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">📋 Recent Blood Requests</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Request ID</th>
+                            <th class="px-4 py-2 text-left">Blood Type</th>
+                            <th class="px-4 py-2 text-left">Quantity</th>
+                            <th class="px-4 py-2 text-left">Status</th>
+                            <th class="px-4 py-2 text-left">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${recentRequests == null or recentRequests.isEmpty()}">
+                            <td colspan="5" class="px-4 py-8 text-center text-gray-500">
+                                No recent requests
+                            </td>
+                        </tr>
+                        <tr th:each="request : ${recentRequests}" class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3" th:text="${request.requestId}">-</td>
+                            <td class="px-4 py-3">
+                                <span class="px-2 py-1 bg-red-100 text-red-800 rounded" th:text="${request.bloodType}">-</span>
+                            </td>
+                            <td class="px-4 py-3" th:text="${request.quantity}">-</td>
+                            <td class="px-4 py-3">
+                                <span th:class="${request.status == 'Approved' ? 'px-2 py-1 bg-green-100 text-green-800 rounded' : 
+                                                 request.status == 'Pending' ? 'px-2 py-1 bg-yellow-100 text-yellow-800 rounded' : 
+                                                 'px-2 py-1 bg-gray-100 text-gray-800 rounded'}" 
+                                      th:text="${request.status}">-</span>
+                            </td>
+                            <td class="px-4 py-3" th:text="${request.dateRequest}">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="/inventory" class="bg-red-500 hover:bg-red-600 text-white rounded-lg shadow-lg p-6 text-center transition-all">
+                <div class="text-4xl mb-2">💉</div>
+                <h4 class="text-xl font-bold">Manage Inventory</h4>
+                <p class="text-red-100 text-sm mt-2">View and manage blood units</p>
+            </a>
+            
+            <a href="/requests" class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-lg p-6 text-center transition-all">
+                <div class="text-4xl mb-2">📋</div>
+                <h4 class="text-xl font-bold">View Requests</h4>
+                <p class="text-orange-100 text-sm mt-2">Process blood requests</p>
+            </a>
+
+            <a href="/events" class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg p-6 text-center transition-all">
+                <div class="text-4xl mb-2">📅</div>
+                <h4 class="text-xl font-bold">Donation Events</h4>
+                <p class="text-blue-100 text-sm mt-2">Organize donation events</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
