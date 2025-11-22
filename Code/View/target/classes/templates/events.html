@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div class="container mx-auto mt-8 p-4">
+        <h1 class="text-3xl font-bold mb-6">Donation Events</h1>
+
+        <div class="bg-white shadow-md rounded-lg overflow-x-auto">
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Event ID</th>
+                        <th class="py-3 px-6 text-left">Date</th>
+                        <th class="py-3 px-6 text-left">Location</th>
+                        <th class="py-3 px-6 text-center">Volume Collected (L)</th>
+                        <th class="py-3 px-6 text-left">Bank ID</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm font-light">
+                    <tr th:each="event : ${events}" class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left" th:text="${event.donationId}"></td>
+                        <td class="py-3 px-6 text-left" th:text="${event.dateEvent}"></td>
+                        <td class="py-3 px-6 text-left" th:text="${event.location}"></td>
+                        <td class="py-3 px-6 text-center" th:text="${event.volumeCollected}"></td>
+                        <td class="py-3 px-6 text-left" th:text="${event.bankId}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
