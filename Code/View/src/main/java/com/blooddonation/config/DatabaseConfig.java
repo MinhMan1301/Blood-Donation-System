@@ -20,7 +20,7 @@ public class DatabaseConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/blood_donation?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true");
         dataSource.setUsername("root");
-        dataSource.setPassword("pass_here");
+        dataSource.setPassword("password");
         return dataSource;
     }
 
