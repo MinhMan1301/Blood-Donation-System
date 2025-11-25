@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Blood Bank Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Tông màu cơ bản từ homepage: Đỏ (#dc2626 - red-600) và font Poppins/Roboto */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7; /* Nền nhẹ nhàng */
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+            /* Sử dụng màu đỏ đậm cho mục đang active */
+        }
+        .sidebar-active-link {
+            background-color: #dc2626; /* red-600 */
+            color: white;
+            border-left: 4px solid #dc2626;
+        }
+        .sidebar-link:hover {
+            background-color: #fef2f2; /* red-50 */
+            color: #dc2626;
+        }
+        .sidebar-active-link:hover {
+             background-color: #b91c1c; /* red-700 on hover for active */
+        }
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.1), 0 4px 6px -2px rgba(220, 38, 38, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex h-screen">
+
+    <div class="sidebar flex flex-col justify-between fixed h-full z-10">
+        <div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-2xl font-bold text-red-600">
+                    <span class="text-3xl">🩸</span>
+                    Blood Bank
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Management System</p>
+            </div>
+            
+            <nav class="space-y-1 p-3">
+                <a href="#" class="sidebar-link sidebar-active-link flex items-center gap-3 p-3 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fas fa-tachometer-alt w-5 h-5"></i>
+                    Dashboard
+                </a>
+                
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-warehouse w-5 h-5"></i>
+                    Blood Inventory
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-users w-5 h-5"></i>
+                    Donors
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-user-injured w-5 h-5"></i>
+                    Patients
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-user-md w-5 h-5"></i>
+                    Doctors
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-university w-5 h-5"></i>
+                    Blood Banks
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-file-invoice w-5 h-5"></i>
+                    Requests
+                </a>
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-calendar-alt w-5 h-5"></i>
+                    Events
+                </a>
+
+                <a href="#" class="sidebar-link flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:text-red-600 text-sm font-medium transition-colors">
+                    <i class="fas fa-cog w-5 h-5"></i>
+                    Account
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-6 text-xs text-gray-400 border-t border-gray-100">
+            Blood Donation Center V1.0
+        </div>
+    </div>
+
+    <div class="flex-1 ml-[250px] p-8">
+        <div class="flex justify-end mb-6 text-sm text-gray-500">
+            Saturday, November 15, 2025
+        </div>
+
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-8">Dashboard</h1>
+        <p class="text-gray-500 mb-10">Blood Donation Center Management System</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+            <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-red-100">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold text-gray-700">Total Blood Units</h3>
+                    <i class="fas fa-tint w-8 h-8 text-red-600"></i>
+                </div>
+                <p class="text-4xl font-bold text-gray-900 mt-4">0</p>
+                <p class="text-sm text-red-500 mt-1">0 Available</p>
+            </div>
+
+            <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-green-100">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold text-gray-700">Active Donors</h3>
+                    <i class="fas fa-heart w-8 h-8 text-green-600"></i>
+                </div>
+                <p class="text-4xl font-bold text-gray-900 mt-4">0</p>
+                <p class="text-sm text-gray-500 mt-1">Registered donors</p>
+            </div>
+
+            <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-blue-100">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold text-gray-700">Patients</h3>
+                    <i class="fas fa-procedures w-8 h-8 text-blue-600"></i>
+                </div>
+                <p class="text-4xl font-bold text-gray-900 mt-4">0</p>
+                <p class="text-sm text-gray-500 mt-1">Total patients</p>
+            </div>
+
+            <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-yellow-100">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold text-gray-700">Pending Requests</h3>
+                    <i class="fas fa-hourglass-half w-8 h-8 text-yellow-600"></i>
+                </div>
+                <p class="text-4xl font-bold text-gray-900 mt-4">0</p>
+                <p class="text-sm text-gray-500 mt-1">Awaiting approval</p>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">Quick Actions</h2>
+
+                <div class="space-y-4">
+                    <a href="#" class="block p-5 bg-red-50 hover:bg-red-100 rounded-lg transition-colors border border-red-200">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl text-red-600">💉</span>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Manage Blood Inventory</h3>
+                                <p class="text-sm text-gray-500">View and update blood units</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="block p-5 bg-red-50 hover:bg-red-100 rounded-lg transition-colors border border-red-200">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl text-red-600">📝</span>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Process Requests</h3>
+                                <p class="text-sm text-gray-500">Handle blood requests</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="block p-5 bg-red-50 hover:bg-red-100 rounded-lg transition-colors border border-red-200">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl text-red-600">🗓️</span>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Donation Events</h3>
+                                <p class="text-sm text-gray-500">Organize donation drives</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">System Status</h2>
+                <p class="text-gray-500 mb-4">Current system health</p>
+
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-gray-600 font-medium">Database Connection</span>
+                        <span class="font-semibold text-green-600">Active</span>
+                    </li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-gray-600 font-medium">API Status</span>
+                        <span class="font-semibold text-green-600">Operational</span>
+                    </li>
+                    <li class="flex justify-between items-center py-2">
+                        <span class="text-gray-600 font-medium">Last Backup</span>
+                        <span class="font-semibold text-gray-800">2 hours ago</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

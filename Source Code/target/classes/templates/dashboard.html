@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div class="container mx-auto mt-8 p-4">
+        <h1 class="text-3xl font-bold mb-4">Admin Dashboard</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Cards for stats -->
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Patients</h2>
+                <p class="text-2xl" th:text="${totalPatients}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Doctors</h2>
+                <p class="text-2xl" th:text="${totalDoctors}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Donors</h2>
+                <p class="text-2xl" th:text="${totalDonors}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Blood Banks</h2>
+                <p class="text-2xl" th:text="${totalBloodBanks}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Blood Units</h2>
+                <p class="text-2xl" th:text="${totalBloodUnits}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Requests</h2>
+                <p class="text-2xl" th:text="${totalRequests}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Events</h2>
+                <p class="text-2xl" th:text="${totalEvents}"></p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-bold">Total Accounts</h2>
+                <p class="text-2xl" th:text="${totalAccounts}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

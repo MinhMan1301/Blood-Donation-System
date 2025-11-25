@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header th:fragment="header" class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/dashboard" class="text-2xl font-bold">Blood Donation</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/dashboard" class="hover:text-gray-300">Dashboard</a></li>
+                    
+                    <!-- Admin Links -->
+                    <th:block th:if="${session.userRole == 'Admin'}">
+                        <li><a href="/patients" class="hover:text-gray-300">Patients</a></li>
+                        <li><a href="/doctors" class="hover:text-gray-300">Doctors</a></li>
+                        <li><a href="/donors" class="hover:text-gray-300">Donors</a></li>
+                        <li><a href="/bloodbanks" class="hover:text-gray-300">Blood Banks</a></li>
+                        <li><a href="/inventory" class="hover:text-gray-300">Inventory</a></li>
+                        <li><a href="/requests" class="hover:text-gray-300">Requests</a></li>
+                        <li><a href="/events" class="hover:text-gray-300">Events</a></li>
+                        <li><a href="/accounts" class="hover:text-gray-300">Accounts</a></li>
+                    </th:block>
+
+                    <!-- Doctor Links -->
+                    <th:block th:if="${session.userRole == 'Doctor'}">
+                        <li><a href="/patients" class="hover:text-gray-300">Patients</a></li>
+                        <li><a href="/donors" class="hover:text-gray-300">Donors</a></li>
+                        <li><a href="/requests" class="hover:text-gray-300">Requests</a></li>
+                    </th:block>
+
+                    <!-- Patient Links -->
+                     <th:block th:if="${session.userRole == 'Patient'}">
+                        <li><a href="/donors" class="hover:text-gray-300">Donors</a></li>
+                        <li><a href="/bloodbanks" class="hover:text-gray-300">Blood Banks</a></li>
+                        <li><a href="/inventory" class="hover:text-gray-300">Inventory</a></li>
+                    </th:block>
+
+                    <li><a href="/logout" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

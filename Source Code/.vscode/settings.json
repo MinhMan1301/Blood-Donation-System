@@ -1,0 +1,4 @@
+{
+    "kiroAgent.configureMCP": "Disabled",
+    "java.format.settings.url": ".vscode/java-formatter.xml"
+}
