@@ -74,28 +74,11 @@ The system is structured around **four main user roles**, each with access to sp
 
 ---
 
-## 💻 Installation & Setup  
-
-### 📌 Requirements  
-- **JDK 11+**  
-- **Maven**  
-- **PostgreSQL/MySQL**  
-- **Git**  
-
-### 🛠️ Setup Steps  
-
-#### 1. Clone Repository  
-```bash
-git clone [YOUR_REPOSITORY_LINK]
-cd blood-donation-system
-
----
-
-### 📬 Contact
+## 📬 Contact
 
 **Man Pham**  
-📧 Email: phamminhman1312005@.com  
-🔗 GitHub: https://github.com/MinhMan1301
-🔗 LinkedIn: [https://www.linkedin.com/in/minh-m%E1%BA%ABn-47b493311/]
+📧 Email: [phamminhman1312005@gmail.com](mailto:phamminhman1312005@gmail.com)  
+🔗 GitHub: [MinhMan1301](https://github.com/MinhMan1301)  
+🔗 LinkedIn: [Minh Mẫn](https://www.linkedin.com/in/minh-m%E1%BA%ABn-47b493311/)
 
 ---
