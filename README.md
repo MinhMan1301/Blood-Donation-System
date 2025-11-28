@@ -75,13 +75,7 @@ The system is structured around **four main user roles**, each with access to sp
 ---
 
 ## 🎥 Video Demo  
-
-[![Video Demo]([https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg](https://github.com/user-attachments/assets/835dddc2-0b46-4112-a06a-cc223066e364))](Blood System Management Website)  
-
-
-https://github.com/user-attachments/assets/835dddc2-0b46-4112-a06a-cc223066e364
-
-
+[**Video Demo: Blood System Management Website**](https://github.com/user-attachments/assets/835dddc2-0b46-4112-a06a-cc223066e364)
 
 ---
 
