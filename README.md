@@ -76,7 +76,7 @@ The system is structured around **four main user roles**, each with access to sp
 
 ## 📬 Contact
 
-**Man Pham**  
+**Leader:** Minh Mẫn  
 📧 Email: [phamminhman1312005@gmail.com](mailto:phamminhman1312005@gmail.com)  
 🔗 GitHub: [MinhMan1301](https://github.com/MinhMan1301)  
 🔗 LinkedIn: [Minh Mẫn](https://www.linkedin.com/in/minh-m%E1%BA%ABn-47b493311/)
