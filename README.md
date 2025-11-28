@@ -74,11 +74,20 @@ The system is structured around **four main user roles**, each with access to sp
 
 ---
 
+## 🎥 Video Demo  
+
+[![Video Demo]([https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg](https://github.com/user-attachments/assets/835dddc2-0b46-4112-a06a-cc223066e364))](Blood System Management Website)  
+
+
+https://github.com/user-attachments/assets/835dddc2-0b46-4112-a06a-cc223066e364
+
+
+
+---
+
 ## 📬 Contact
 
 **Leader:** Minh Mẫn  
 📧 Email: [phamminhman1312005@gmail.com](mailto:phamminhman1312005@gmail.com)  
 🔗 GitHub: [MinhMan1301](https://github.com/MinhMan1301)  
 🔗 LinkedIn: [Minh Mẫn](https://www.linkedin.com/in/minh-m%E1%BA%ABn-47b493311/)
-
----
