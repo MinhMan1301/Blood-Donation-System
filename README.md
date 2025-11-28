@@ -1,119 +1,90 @@
-## 🩸 Blood Donation & Hospital Resource Management System 🩸
-
-A comprehensive platform designed to optimize the entire **blood donation lifecycle** and **resource management** within healthcare institutions. The system provides a rapid, transparent online channel, allowing donors to directly interact with hospitals, minimizing logistical friction, and ensuring that hospital blood inventory is managed and updated in real-time.
-
----
-
-## 🚀 Key Features & Core Value Proposition
-
-This project focuses on creating an efficient and humanitarian blood management process, connecting donors, hospitals, and blood banks seamlessly:
-
-### 🔒 Primary Functions:
-
-* **Donor & Patient Management:** Detailed profiles, health status tracking, and historical records for both donors and patients.
-* **Blood Inventory Control:** Real-time tracking of blood units, categorized by blood type, RH factor, and expiration date across various Blood Banks.
-* **Request Management:** Handling urgent blood requests from patients/doctors, connecting them directly with available inventory and matching donors.
-* **Donation Event Coordination:** Management and scheduling of organized blood donation events, linked to specific Blood Banks.
-* **User Roles & Security:** Dedicated accounts for Donors, Patients, and Doctors, ensuring secure, role-based access control.
-
-### 🔑 Unique/Proposed Features (Highlights):
-
-* **Geo-analysis System:** Visualizing donor density by blood type on a map to optimize the location and timing of blood drives.
-* **Blood Traceability:** Allowing donors to view the status of their donated unit (anonymized) after it enters the inventory.
+# 🩸 Blood Donation & Hospital Resource Management System  
+A full-stack platform that optimizes the **blood donation lifecycle** and **hospital resource management**, allowing donors, patients, doctors, and blood banks to interact through a secure, real-time digital system.
 
 ---
 
-## 🏗️ System Architecture & Database Structure
+## 🌐 Overview  
+The system is structured around **four main user roles**, each with access to specific data entities and workflows:
 
-The system is built on a robust architecture designed for data integrity and complex relationship management, crucial for medical applications.
+### 👤 Patient  
+- Views **only their own blood requests**.  
+- Creates and tracks request statuses.  
 
-### 1. 💻 Technology Stack
+### 🧑‍⚕️ Doctor  
+- Views **all patients' blood requests**.  
+- Reviews, verifies, and updates request statuses.  
+- Supports hospital-wide workflow decisions.  
 
-| Category | Technology & Tools | Role Description |
-| :--- | :--- | :--- |
-| **Backend & Core Logic** | **Java (Spring Boot)** | Building a robust, secure API and handling the complex business logic of the management system. |
-| **Frontend (Interface)** | **HTML, CSS** | Developing a user-friendly and accessible interface for all user roles. |
-| **Database (DB)** | **PostgreSQL & MySQL** | Used in combination to ensure flexibility and scalability in storing critical medical data. |
-| **Source Control** | **GitHub** | Managing code versions, tracking issues, and supporting collaborative development. |
-| **Design Tools** | **Figma, draw.io, ERD Plus** | Designing the UI/UX and creating the detailed data models (ERD/Schema). |
+### 🏥 Blood Bank  
+- Manages the **entire blood inventory** (type, RH, quantity, expiration).  
+- Views **all patient requests** across the system.  
+- Creates and updates **donation events**.  
+- Acts as the main logistics and storage unit.  
 
-### 2. 📊 Schema
-
-The relational database design features a normalized structure to handle key entities and their complex relationships:
-
-* **Core Entities:** `patients`, `donors`, `doctor`, and `account` (for user authentication).
-* **Logistics & Inventory:** `blood_inventory`, `blood_bank`, and `donation_event`.
-* **Workflow:** `request` connects patients/doctors to the inventory.
-* **Junction Tables (Many-to-Many):** `doctor_bloodbank` (Doctor working at Bank) and `donors_donationevent` (Donor enrolls in Event).
-
-### 3. 📈 Entity-Relationship Diagram (drawio)
-
-The ERD visualizes the conceptual model, highlighting the cardinality of relationships, ensuring data accuracy:
-
-* **🧵 Key Relationships:**
-    * `Account` has a **One-to-One** relationship with `Patients`, `Donors`, and `Doctor`.
-    * `Doctor` can `manage` multiple `Blood_Bank`s **(1:N)** and `work_at` a `Blood_Bank` **(1:N)**.
-    * A `Request` involves one `Patient` and is fulfilled by units from the `Blood_Inventory`.
-    * `Donation_Event` involves multiple `Donors` and is `organize`d by a `Blood_Bank`.
+### 🩸 Donor  
+- Receives notifications for **all donation events**.  
+- Views details of **all blood banks**.  
+- Accesses donation schedules and updates.  
 
 ---
 
-## 💻 Installation and Startup Guide
+## 🚀 Key Features  
 
-To run this application in a local environment, follow these steps:
+### 🔒 Core Functionalities  
+- **Donor & Patient Management** — profiles, health data, and activity history.  
+- **Blood Inventory Control** — real-time stock updates across blood banks.  
+- **Request Management** — full lifecycle tracking across roles.  
+- **Donation Event Coordination** — scheduling and event management.  
+- **Role-Based Access Control** — secure and isolated permissions.
 
-### 1. 🏴󠁲󠁯󠁩󠁦󠁿 Prerequisites
-
-* [Java Development Kit (JDK) 11+](https://www.oracle.com/java/technologies/downloads/)
-* [Apache Maven](https://maven.apache.org/download.cgi)
-* A Database Management System (PostgreSQL or MySQL)
-* [Git](https://git-scm.com/)
-
-### 2. 🆙 Project Setup
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [YOUR_REPOSITORY_LINK]
-    cd blood-donation-system
-    ```
-2.  **Database Configuration:**
-    * Create a new database instance.
-    * Update the Spring Boot configuration file (`application.properties` or `application.yml`) with your DB connection details.
-    ```properties
-    # Example in application.properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/blood_db
-    spring.datasource.username=[username]
-    spring.datasource.password=[password]
-    spring.jpa.hibernate.ddl-auto=update # or none
-    ```
-3.  **Build and Run the Spring Boot Application (Backend):**
-    ```bash
-    mvn clean install
-    mvn spring-boot:run
-    ```
-4.  **Access the Application:**
-    The application should be available at `http://localhost:8080` (or the port you configured).
+### 🌟 Highlighted Features  
+- **Geo-Analysis Dashboard** — maps donor density by blood type.  
+- **Blood Traceability** — donors can check the status of their donated blood unit (anonymized).  
 
 ---
 
-## 🤝 Contributing
+## 🏗️ System Architecture  
 
-You can contribute to this project by opening an **Issue** to report bugs or suggest new features. For information regarding our **team's task assignments and internal workflow**, please refer to the documentation located in the **report file** folder.
-
----
-
-## 📄 License
-**All Rights Reserved. For Reference Use Only.**
-
-This project is primarily intended for **academic/portfolio reference and viewing purposes**. While the code is visible and can be downloaded, it is **not distributed under an Open Source License**. Standard copyright law applies.
-
-* **You MAY** view and download the code for learning or reference.
-* **You MAY NOT** use this code for commercial purposes, distribute modified versions, or deploy it publicly without explicit written permission from the project owner.
+### 💻 Technology Stack  
+| Category | Tools | Description |
+|---------|-------|-------------|
+| **Backend** | Java Spring Boot | API development & business logic |
+| **Frontend** | HTML, CSS | User interface for all role types |
+| **Database** | PostgreSQL, MySQL | Medical and inventory data storage |
+| **Version Control** | GitHub | Collaboration and issue tracking |
+| **Design** | Figma, draw.io, ERDPlus | UI/UX and ERD modeling |
 
 ---
 
-## 📞 Contact
+## 📊 Database Schema  
 
-* **Leader:** [Pham Nguyen Minh Man]
-* **Support Email:** [phamminhman1312005@gmail.com]
-* **GitHub:** [MinhMan1301](https://github.com/MinhMan1301)
+### 🔑 Key Entities  
+- `account`, `patients`, `donors`, `doctor`  
+- `request`, `donation_event`  
+- `blood_bank`, `blood_inventory`  
+- Many-to-Many tables:  
+  - `doctor_bloodbank`  
+  - `donors_donationevent`  
+
+### 🧵 Relationships  
+- Each **Account** has a 1:1 relationship with Patient, Donor, or Doctor.  
+- A **Doctor** may manage or work at multiple Blood Banks (1:N).  
+- A **Request** belongs to a Patient and is fulfilled through Blood Inventory.  
+- A **Donation Event** is created by a Blood Bank and involves many Donors.  
+
+---
+
+## 💻 Installation & Setup  
+
+### 📌 Requirements  
+- **JDK 11+**  
+- **Maven**  
+- **PostgreSQL/MySQL**  
+- **Git**  
+
+### 🛠️ Setup Steps  
+
+#### 1. Clone Repository  
+```bash
+git clone [YOUR_REPOSITORY_LINK]
+cd blood-donation-system
