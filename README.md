@@ -88,3 +88,14 @@ The system is structured around **four main user roles**, each with access to sp
 ```bash
 git clone [YOUR_REPOSITORY_LINK]
 cd blood-donation-system
+
+---
+
+### 📬 Contact
+
+**Man Pham**  
+📧 Email: phamminhman1312005@.com  
+🔗 GitHub: https://github.com/MinhMan1301
+🔗 LinkedIn: [https://www.linkedin.com/in/minh-m%E1%BA%ABn-47b493311/]
+
+---
